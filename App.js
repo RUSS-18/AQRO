@@ -36,7 +36,7 @@ function BottomTabs() {
               tabBarIcon: ({ color, size }) => {
                   const icons = {
                       Home: 'home-outline',
-                      Container: 'cube-outline',
+                      Containers: 'briefcase-outline',
                       MarketPlace: 'cart-outline',
                       Menu: 'menu-outline'
                   };
@@ -59,7 +59,7 @@ function BottomTabs() {
         }
       >
           <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name="Container" component={ContainerScreen} />
+          <Tab.Screen name="Containers" component={ContainerScreen} />
           <Tab.Screen name="MarketPlace" component={MarketPlaceScreen} />
           <Tab.Screen name="Menu" component={MenuScreen} />
       </Tab.Navigator>

@@ -7,8 +7,19 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Card } from 'react-native-paper';
+import colors from '../configs/colors';
 
 function HomeScreen({navigation}) {
+
+    const cardsInfo = [
+        {name: "Available", bgColor: "#3F6FF1", value: 5, icon: "briefcase"},
+        {name: "Used", bgColor: "#70C146", value: 10, icon: "briefcase"},
+        {name: "Returned", bgColor: "#6FACDA", value: 5, icon: "repeat"},
+        {name: "Rebate Value", bgColor: "#E7C12D", value: 1455, icon: "card"},
+        {name: "Claimed Rebate", bgColor: "#D3342B", value: 2400, icon: "card"},
+        {name: "Total Containers", bgColor: "#DD8A20", value: 15, icon: "albums"}
+    ];
+
 
     return (
         <SafeAreaProvider style={styles.container1}>
@@ -16,18 +27,17 @@ function HomeScreen({navigation}) {
                 <ScrollView contentContainerStyle={styles.scrollContainer}>
                     {/* <Text style={styles.subTitles}>Containers</Text> */}
                     <View style={styles.infoCage}>
-                        <Card style={styles.infoContainers}>    
-                        </Card>
-                        <Card style={styles.infoContainers}>    
-                        </Card>
-                        <Card style={styles.infoContainers}>    
-                        </Card>
-                        <Card style={styles.infoContainers}>    
-                        </Card>
-                        <Card style={styles.infoContainers}>    
-                        </Card>
-                        <Card style={styles.infoContainers}>    
-                        </Card>
+                        {cardsInfo.map((card, index) => 
+                            <Card key={index} style={styles.infoContainers}> 
+                                <View style={styles.infoContent}>
+                                    <View style={[styles.infoCardIcon, {backgroundColor: card.bgColor}]}>
+                                        <Ionicons name={card.icon} size={18} style={styles.infoIcon}/>
+                                    </View>
+                                    <Text style={styles.infoCardValue}>{card.value}</Text>
+                                </View>  
+                                <Text style={styles.infoCardName}>{card.name}</Text>
+                            </Card>
+                        )}
                     </View>
 
                     <Text style={[styles.subTitles, styles.subTitles2]}>Community</Text>
@@ -71,7 +81,7 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         // borderRadius: 10, 
         // borderTopWidth: 1,
-        // borderTopColor: "#555"
+        // borderTopColor: colors.accentBlack
     },
 
     scrollContainer: {
@@ -88,22 +98,27 @@ const styles = StyleSheet.create({
     infoContainers: {
         height: 80,
         width: 110,
-        backgroundColor: '#eee',
-        opacity: .5
+        backgroundColor: colors.accentBlack,
+        padding: 8,
+    },
+
+    infoContent: {
+        width: "100%",
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
     },
 
     comInfoContainers: {
         height: 200,
         width: 350,
-        backgroundColor: '#eee',
-        opacity: .5
+        backgroundColor: colors.accentBlack,
     },
 
     articles: {
         height: 120,
         width: 170,
-        backgroundColor: '#eee',
-        opacity: .5
+        backgroundColor: colors.accentBlack,
     },
 
     subTitles: {
@@ -122,8 +137,32 @@ const styles = StyleSheet.create({
         height: 80,
         width: 80,
         borderRadius: 10,
-        backgroundColor: '#eee',
-        opacity: .5,
+        backgroundColor: colors.accentBlack,
+    },
+
+    infoIcon: {
+        color: '#eee',
+    },
+
+    infoCardIcon: {
+        height: 28,
+        width: 28,
+        borderRadius: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    infoCardValue: {
+        color: '#eee',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+
+    infoCardName: {
+        color: '#eee',
+        fontSize: 12,
+        fontWeight: 'bold',
+        marginTop: 15
     }
 
 });
