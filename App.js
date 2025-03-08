@@ -5,7 +5,7 @@ import HomeScreen from './AQRO/screens/HomeScreen';
 import ContainerScreen from './AQRO/screens/ContainerScreen';
 import MarketPlaceScreen from './AQRO/screens/MarketPlaceScreen';
 import MenuScreen from './AQRO/screens/MenuScreen';
-import { Image, View, StyleSheet, Text } from 'react-native';
+import { Image, View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import {Ionicons } from '@expo/vector-icons';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -50,7 +50,9 @@ function BottomTabs() {
               headerTitle: () => (
                 <View style={styles.headerContainer}>                
                   <Image source={require("/Users/russelguerrero/AQRO2/AQRO/assets/4.png")} style={styles.heroImage} />
-                  <Ionicons name='scan-outline' style={styles.scan} size={32}/>
+                  <TouchableOpacity>
+                    <Ionicons name='scan-outline' style={styles.scan} size={32}/>
+                  </TouchableOpacity>
                 </View>
               ),
           })
@@ -66,15 +68,16 @@ function BottomTabs() {
 
 const styles = StyleSheet.create({
   heroImage: {
-    width: 200,
-    left:-30,
-    resizeMode:'contain',
+    width: 180,
+    height: 50,
+    left:-20,
+    resizeMode:'cover',
   },
 
   scan: {
     color: '#eee',
-    right: '-50%',
-    top: '1%'
+    top: 5, 
+    left: 140
   },
 
   headerContainer: {
