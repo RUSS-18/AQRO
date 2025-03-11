@@ -5,6 +5,7 @@ import HomeScreen from './AQRO/screens/HomeScreen';
 import ContainerScreen from './AQRO/screens/ContainerScreen';
 import MarketPlaceScreen from './AQRO/screens/MarketPlaceScreen';
 import MenuScreen from './AQRO/screens/MenuScreen';
+import colors, { lightTheme } from './AQRO/configs/colors';
 import { Image, View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import {Ionicons } from '@expo/vector-icons';
 import {NavigationContainer} from '@react-navigation/native';
@@ -40,16 +41,16 @@ function BottomTabs() {
                       MarketPlace: 'cart-outline',
                       Menu: 'menu-outline'
                   };
-                  return <Ionicons name={icons[route.name]} size={size} color={color} />;
+                  return <Ionicons name={icons[route.name]} size={32} color={color} style={{height: 32, width:32}}/>;
               },
-              tabBarActiveTintColor: '#27800c',
-              tabBarInactiveTintColor: '#eee',
-              tabBarStyle: { backgroundColor: '#000', paddingBottom: 5 },
-              tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold' },
-              headerStyle: { backgroundColor: "#000" },
+              tabBarActiveTintColor: lightTheme.primary,
+              tabBarInactiveTintColor: lightTheme.text,
+              tabBarStyle: { backgroundColor: lightTheme.background, height: 60},
+              tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold'},
+              headerStyle: { backgroundColor: lightTheme.background},
               headerTitle: () => (
                 <View style={styles.headerContainer}>                
-                  <Image source={require("/Users/russelguerrero/AQRO2/AQRO/assets/4.png")} style={styles.heroImage} />
+                  <Image source={require("/Users/russelguerrero/AQRO2/AQRO/assets/2.png")} style={styles.heroImage} />
                   <TouchableOpacity>
                     <Ionicons name='scan-outline' style={styles.scan} size={32}/>
                   </TouchableOpacity>
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
   },
 
   scan: {
-    color: '#eee',
+    color: lightTheme.text,
     top: 5, 
     left: 140
   },

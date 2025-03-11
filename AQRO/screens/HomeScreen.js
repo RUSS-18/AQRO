@@ -2,23 +2,27 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard, Platform, StatusBar, Dimensions, KeyboardAvoidingView, ScrollView} from 'react-native';
 import {useDimensions, useDeviceOrientation} from '@react-native-community/hooks';
 import { Ionicons } from '@expo/vector-icons';
-import { Pressable, TextInput } from 'react-native-gesture-handler';
+import { Pressable} from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Card } from 'react-native-paper';
-import colors from '../configs/colors';
+import colors, { lightTheme } from '../configs/colors';
 
 function HomeScreen({navigation}) {
 
     const cardsInfo = [
-        {name: "Available", bgColor: "#3F6FF1", value: 5, icon: "briefcase"},
-        {name: "Used", bgColor: "#70C146", value: 10, icon: "briefcase"},
-        {name: "Returned", bgColor: "#6FACDA", value: 5, icon: "repeat"},
-        {name: "Rebate Value", bgColor: "#E7C12D", value: 1455, icon: "card"},
-        {name: "Claimed Rebate", bgColor: "#D3342B", value: 2400, icon: "card"},
-        {name: "Total Containers", bgColor: "#DD8A20", value: 15, icon: "albums"}
+        {name: "Active", bgColor: "#70C146", value: 5, icon: "briefcase"},
+        // {name: "Used", bgColor: "#3F6FF1", value: 10, icon: "briefcase"},
+        {name: "Returned", bgColor: "#6FACDA", value: 8, icon: "repeat"},
+        {name: "Available Rebate", bgColor: "#E7C12D", value: 1250, icon: "card"},
+        // {name: "Claimed Rebate", bgColor: "#D3342B", value: 2400, icon: "card"},
+        // {name: "Total Containers", bgColor: "#DD8A20", value: 15, icon: "albums"}
     ];
+
+    const aqroPartners = [
+        {name: "itos", image: require("/Users/russelguerrero/AQRO2/AQRO/assets/itos.jpg")},
+        {name: "jeds", image: require("/Users/russelguerrero/AQRO2/AQRO/assets/jeds.jpg")},
+        {name: "piolos", image: require("/Users/russelguerrero/AQRO2/AQRO/assets/piolos.jpg")}
+    ]
 
 
     return (
@@ -48,17 +52,17 @@ function HomeScreen({navigation}) {
 
                     <Text style={[styles.subTitles, styles.subTitles2]}>Our partners</Text>
                     <View style={styles.infoCage}>
-                        <Image source={require("/Users/russelguerrero/AQRO2/AQRO/assets/itos.jpg")} style={styles.imagePartner}/>
-                        <Image source={require("/Users/russelguerrero/AQRO2/AQRO/assets/jeds.jpg")} style={styles.imagePartner}/>
-                        <Image source={require("/Users/russelguerrero/AQRO2/AQRO/assets/piolos.jpg")} style={styles.imagePartner}/>
-                        <Card style={[styles.imagePartner, {alignItems: 'center', justifyContent: 'center'}]}><Text style={{color:'#eee'}}>More...</Text></Card>
+                        {aqroPartners.map((partners, index) => 
+                            <Image key={index} source={partners.image} style={styles.imagePartner}/>
+                        )}
+                        <Card style={[styles.imagePartner, {alignItems: 'center', justifyContent: 'center'}]}><Text style={{color:lightTheme.text}}>More...</Text></Card>
                     </View>
 
-                    <Text style={[styles.subTitles, styles.subTitles2]}>Articles</Text>
+                    <Text style={[styles.subTitles, styles.subTitles2]}>AQRO Containers</Text>
                     <View style={styles.infoCage}>
-                        <Card style={styles.articles}>    
+                        <Card style={styles.recoProducts}>    
                         </Card>
-                        <Card style={styles.articles}>    
+                        <Card style={styles.recoProducts}>    
                         </Card>
                     </View>
                 </ScrollView>
@@ -68,37 +72,38 @@ function HomeScreen({navigation}) {
 }
 
 const screenHeight = Dimensions.get('screen').height;
+const screenWidth = Dimensions.get('screen').width;
 
 const styles = StyleSheet.create({
     container1: {
-        backgroundColor: "#000",
+        backgroundColor: lightTheme.cardBackground,
     },
 
     container: {
         height:screenHeight, 
         alignItems:'center',
-        backgroundColor: "#000",
-        paddingTop: 20,
-        // borderRadius: 10, 
-        // borderTopWidth: 1,
-        // borderTopColor: colors.accentBlack
+        backgroundColor: lightTheme.background,
+        borderRadius: 10, 
+        borderTopWidth: 1,
+        borderTopColor: lightTheme.cardBackground
     },
 
     scrollContainer: {
-        paddingBottom: '60%'
+        paddingBottom: '60%',
+        marginTop: 20
     }, 
 
     infoCage: {
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        gap: 10
+        gap: 10,
     },
 
     infoContainers: {
-        height: 80,
-        width: 110,
-        backgroundColor: colors.accentBlack,
+        height: screenWidth * .2,
+        width: screenWidth * .28,
+        backgroundColor: lightTheme.cardBackground,
         padding: 8,
     },
 
@@ -112,21 +117,22 @@ const styles = StyleSheet.create({
     comInfoContainers: {
         height: 200,
         width: 350,
-        backgroundColor: colors.accentBlack,
+        backgroundColor: lightTheme.cardBackground,
     },
 
-    articles: {
+    recoProducts: {
         height: 120,
         width: 170,
-        backgroundColor: colors.accentBlack,
+        backgroundColor: lightTheme.cardBackground,
     },
 
     subTitles: {
-        color: '#eee',
+        color: lightTheme.text,
         fontSize: 18, 
         fontWeight: 'bold',
-        left: 25,
-        bottom: 5
+        left: 5,
+        bottom: 5,
+        marginTop: 20
     },
 
     subTitles2: {
@@ -137,11 +143,11 @@ const styles = StyleSheet.create({
         height: 80,
         width: 80,
         borderRadius: 10,
-        backgroundColor: colors.accentBlack,
+        backgroundColor: lightTheme.cardBackground,
     },
 
     infoIcon: {
-        color: '#eee',
+        color: lightTheme.secondary,
     },
 
     infoCardIcon: {
@@ -153,13 +159,13 @@ const styles = StyleSheet.create({
     },
 
     infoCardValue: {
-        color: '#eee',
+        color: lightTheme.text,
         fontSize: 18,
         fontWeight: 'bold',
     },
 
     infoCardName: {
-        color: '#eee',
+        color: lightTheme.text,
         fontSize: 12,
         fontWeight: 'bold',
         marginTop: 15
