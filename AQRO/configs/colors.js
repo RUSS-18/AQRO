@@ -11,7 +11,7 @@ export const lightTheme = {
     primary: '#00df82',    // Green
     secondary: '#ffffff',  // White
     borderColor: '#333F44',
-    cardBackground: '#B0B8C5',
+    cardBackground: '#111E20',
     cardBackground2: '#6B7280',
     border: 'rgba(3, 15, 15, 0.1)',
   };

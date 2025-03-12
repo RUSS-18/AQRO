@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     infoContainers: {
         height: screenWidth * .2,
         width: screenWidth * .28,
-        backgroundColor: lightTheme.cardBackground,
+        backgroundColor: lightTheme.secondary,
         padding: 8,
     },
 
@@ -117,13 +117,13 @@ const styles = StyleSheet.create({
     comInfoContainers: {
         height: 200,
         width: 350,
-        backgroundColor: lightTheme.cardBackground,
+        backgroundColor: lightTheme.secondary,
     },
 
     recoProducts: {
         height: 120,
         width: 170,
-        backgroundColor: lightTheme.cardBackground,
+        backgroundColor: lightTheme.secondary,
     },
 
     subTitles: {
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         height: 80,
         width: 80,
         borderRadius: 10,
-        backgroundColor: lightTheme.cardBackground,
+        backgroundColor: lightTheme.secondary,
     },
 
     infoIcon: {

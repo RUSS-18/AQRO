@@ -19,24 +19,25 @@ function ContainerScreen(props) {
     ];
 
     const containerInfo = [
-        {containerID: 1, name: "lito", remain: 4, capacity: 10, state: "Active"},
-        {containerID: 2, name: "lito1", remain: 6, capacity: 10, state: "Active"},
-        {containerID: 3, name: "lito2", remain: 9, capacity: 10, state: "Active"},
-        {containerID: 4, name: "lito3", remain: 2, capacity: 10, state: "Active"},
-        {containerID: 5, name: "lito4", remain: 1, capacity: 10, state: "Active"},
-        {containerID: 1, name: "lito", remain: 4, capacity: 10, state: "Used"},
-        {containerID: 2, name: "lito1", remain: 0, capacity: 10, state: "Used"},
-        {containerID: 3, name: "lito2", remain: 0, capacity: 10, state: "Used"},
-        {containerID: 4, name: "lito3", remain: 0, capacity: 10, state: "Used"},
-        {containerID: 5, name: "lito4", remain: 0, capacity: 10, state: "Used"},
-        {containerID: 1, name: "lito", remain: 0, capacity: 10, state: "Used"},
-        {containerID: 3, name: "lito2", remain: 0, capacity: 10, state: "Returned"},
-        {containerID: 2, name: "lito1", remain: 0, capacity: 10, state: "Returned"},
-        {containerID: 4, name: "lito3", remain: 2, capacity: 10, state: "Void"},
-        {containerID: 5, name: "lito4", remain: 1, capacity: 10, state: "Void"},
+        {containerID: 1, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito", remain: 4, capacity: 10, state: "Active"},
+        {containerID: 2, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito1", remain: 6, capacity: 10, state: "Active"},
+        {containerID: 3, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito2", remain: 9, capacity: 10, state: "Active"},
+        {containerID: 4, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito3", remain: 2, capacity: 10, state: "Active"},
+        {containerID: 5, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito4", remain: 1, capacity: 10, state: "Active"},
+        {containerID: 1, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito", remain: 4, capacity: 10, state: "Used"},
+        {containerID: 2, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito1", remain: 0, capacity: 10, state: "Used"},
+        {containerID: 3, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito2", remain: 0, capacity: 10, state: "Used"},
+        {containerID: 4, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito3", remain: 0, capacity: 10, state: "Used"},
+        {containerID: 5, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito4", remain: 0, capacity: 10, state: "Used"},
+        {containerID: 1, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito", remain: 0, capacity: 10, state: "Used"},
+        {containerID: 3, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito2", remain: 0, capacity: 10, state: "Returned"},
+        {containerID: 2, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito1", remain: 0, capacity: 10, state: "Returned"},
+        {containerID: 4, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito3", remain: 2, capacity: 10, state: "Void"},
+        {containerID: 5, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito4", remain: 1, capacity: 10, state: "Void"},
     ]
 
-    const [value, setVal] = useState('');
+
+    const [value, setVal] = useState('Active');
 
     return (
         <SafeAreaProvider style={styles.container1}>
@@ -74,13 +75,31 @@ function ContainerScreen(props) {
                 />
 
                 <ScrollView contentContainerStyle={styles.scrollContainer}>
-                    {/* <View style={[styles.infoCage, styles.infoCage2]}> */}
-                        {containerInfo.map((container, index) =>   
+                    {value === 'Active' && ( 
+                        containerInfo.filter(container => container.state === 'Active').map((container, index) =>   
+                        <Pressable>
                             <Card key={index} style={styles.infoCageContainers}>
+                                <View style={styles.infoContent}>
+                                    <View style={styles.imageContainer}>
+                                        <Image source={require('/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png')} style={styles.listImage}/>
+                                    </View>     
+                                    <View style={styles.containerBasicInfo}>
+                                        <Text style={[styles.basicInfoContent, styles.infoCardValue]}>{container.name}</Text>
+                                        <Text style={[styles.basicInfoContent, {color: lightTheme.primary}]}>{container.state}</Text>
+                                        <Text style={styles.basicInfoContent}>Remaining use: {container.remain}</Text>
+                                        <Text style={styles.basicInfoContent}>Limit: {container.capacity}</Text>
+                                    </View>                               
+                                </View>
+                            </Card>       
+                        </Pressable>
+                    ))}
 
+                    {value === 'Inactive' && ( 
+                            containerInfo.filter(container => container.state !== 'Active').map((container, index) =>   
+                            <Card key={index} style={styles.infoCageContainers}>
+                                <Text>{container.state}</Text>
                             </Card>             
-                        )}
-                    {/* </View> */}
+                    ))}
                 </ScrollView>
             </SafeAreaView>
         </SafeAreaProvider>
@@ -131,7 +150,7 @@ const styles = StyleSheet.create({
     infoCageContainers: {
         height: screenWidth * .2,
         width: screenWidth * .86,
-        backgroundColor: lightTheme.cardBackground,
+        backgroundColor: lightTheme.secondary,
     },
     
     containerContent: {
@@ -143,7 +162,7 @@ const styles = StyleSheet.create({
     infoContainers: {
         height: screenWidth * .2,
         width: screenWidth * .28,
-        backgroundColor: lightTheme.cardBackground,
+        backgroundColor: lightTheme.secondary,
         padding: 8,
     },
     
@@ -182,6 +201,31 @@ const styles = StyleSheet.create({
     containerContent: {
         height: screenWidth * .2,
         width: screenWidth * .8
+    },
+
+    listImage: {
+        width: "100%",
+        height: "100%",  
+    },
+
+    imageContainer: {
+        // backgroundColor: 'red',
+        width: "25%",
+        height: "100%",  
+        borderLeftColor: lightTheme.primary,
+        borderLeftWidth: 10,
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+    },
+
+    containerBasicInfo: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        width: "100%"
+    },
+
+    basicInfoContent: {
+        width: "50%",
     },
 });
 

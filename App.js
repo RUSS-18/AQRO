@@ -6,7 +6,7 @@ import ContainerScreen from './AQRO/screens/ContainerScreen';
 import MarketPlaceScreen from './AQRO/screens/MarketPlaceScreen';
 import MenuScreen from './AQRO/screens/MenuScreen';
 import colors, { lightTheme } from './AQRO/configs/colors';
-import { Image, View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Image, View, StyleSheet, Text, TouchableOpacity, ImageBackground } from 'react-native';
 import {Ionicons } from '@expo/vector-icons';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -47,12 +47,12 @@ function BottomTabs() {
               tabBarInactiveTintColor: lightTheme.text,
               tabBarStyle: { backgroundColor: lightTheme.background, height: 60},
               tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold'},
-              headerStyle: { backgroundColor: lightTheme.background},
+              headerBackground: () => (<ImageBackground source={require('/Users/russelguerrero/AQRO2/AQRO/assets/summer-night-forest-vector-background-260nw-1539958856.jpg.webp')} style={{width: '100%', height: '100%', resizeMode:'contain'}}/>),
               headerTitle: () => (
                 <View style={styles.headerContainer}>                
-                  <Image source={require("/Users/russelguerrero/AQRO2/AQRO/assets/2.png")} style={styles.heroImage} />
+                  <Image source={require("/Users/russelguerrero/AQRO2/AQRO/assets/4.png")} style={styles.heroImage} />
                   <TouchableOpacity>
-                    <Ionicons name='scan-outline' style={styles.scan} size={32}/>
+                    <Ionicons name='scan' style={styles.scan} size={32}/>
                   </TouchableOpacity>
                 </View>
               ),
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
 
   scan: {
-    color: lightTheme.text,
+    color: lightTheme.secondary,
     top: 5, 
     left: 140
   },
