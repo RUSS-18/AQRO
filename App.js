@@ -44,8 +44,8 @@ function BottomTabs() {
                   return <Ionicons name={icons[route.name]} size={32} color={color} style={{height: 32, width:32}}/>;
               },
               tabBarActiveTintColor: lightTheme.primary,
-              tabBarInactiveTintColor: lightTheme.text,
-              tabBarStyle: { backgroundColor: lightTheme.background, height: 60},
+              tabBarInactiveTintColor: lightTheme.secondary,
+              tabBarStyle: { backgroundColor: lightTheme.cardBackground2, height: 60},
               tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold'},
               headerBackground: () => (<ImageBackground source={require('/Users/russelguerrero/AQRO2/AQRO/assets/summer-night-forest-vector-background-260nw-1539958856.jpg.webp')} style={{width: '100%', height: '100%', resizeMode:'contain'}}/>),
               headerTitle: () => (
