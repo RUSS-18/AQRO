@@ -19,21 +19,21 @@ function ContainerScreen(props) {
     ];
 
     const containerInfo = [
-        {containerID: 1, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito", remain: 4, capacity: 10, state: "Active"},
-        {containerID: 2, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito1", remain: 6, capacity: 10, state: "Active"},
-        {containerID: 3, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito2", remain: 9, capacity: 10, state: "Active"},
-        {containerID: 4, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito3", remain: 2, capacity: 10, state: "Active"},
-        {containerID: 5, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito4", remain: 1, capacity: 10, state: "Active"},
-        {containerID: 1, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito", remain: 4, capacity: 10, state: "Used"},
-        {containerID: 2, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito1", remain: 0, capacity: 10, state: "Used"},
-        {containerID: 3, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito2", remain: 0, capacity: 10, state: "Used"},
-        {containerID: 4, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito3", remain: 0, capacity: 10, state: "Used"},
-        {containerID: 5, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito4", remain: 0, capacity: 10, state: "Used"},
-        {containerID: 1, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito", remain: 0, capacity: 10, state: "Used"},
-        {containerID: 3, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito2", remain: 0, capacity: 10, state: "Returned"},
-        {containerID: 2, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito1", remain: 0, capacity: 10, state: "Returned"},
-        {containerID: 4, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito3", remain: 2, capacity: 10, state: "Void"},
-        {containerID: 5, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png" ,name: "lito4", remain: 1, capacity: 10, state: "Void"},
+        {containerID: 1, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 40,name: "lito", remain: 4, capacity: 10, state: "Active"},
+        {containerID: 2, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 60,name: "lito1", remain: 6, capacity: 10, state: "Active"},
+        {containerID: 3, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 90,name: "lito2", remain: 9, capacity: 10, state: "Active"},
+        {containerID: 4, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 20,name: "lito3", remain: 2, capacity: 10, state: "Active"},
+        {containerID: 5, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 10,name: "lito4", remain: 1, capacity: 10, state: "Active"},
+        {containerID: 1, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 0,name: "lito", remain: 4, capacity: 10, state: "Used"},
+        {containerID: 2, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 0,name: "lito1", remain: 0, capacity: 10, state: "Used"},
+        {containerID: 3, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 0,name: "lito2", remain: 0, capacity: 10, state: "Used"},
+        {containerID: 4, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 0,name: "lito3", remain: 0, capacity: 10, state: "Used"},
+        {containerID: 5, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 0,name: "lito4", remain: 0, capacity: 10, state: "Used"},
+        {containerID: 1, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 0,name: "lito", remain: 0, capacity: 10, state: "Used"},
+        {containerID: 3, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 0,name: "lito2", remain: 0, capacity: 10, state: "Returned"},
+        {containerID: 2, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 0,name: "lito1", remain: 0, capacity: 10, state: "Returned"},
+        {containerID: 4, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 0,name: "lito3", remain: 2, capacity: 10, state: "Void"},
+        {containerID: 5, image: "/Users/russelguerrero/AQRO2/AQRO/assets/Bilao-14-Inch.png", rebate: 0,name: "lito4", remain: 1, capacity: 10, state: "Void"},
     ]
 
 
@@ -85,9 +85,9 @@ function ContainerScreen(props) {
                                     </View>     
                                     <View style={styles.containerBasicInfo}>
                                         <Text style={[styles.basicInfoContent, styles.infoCardValue]}>{container.name}</Text>
-                                        <Text style={[styles.basicInfoContent, {color: lightTheme.primary}]}>{container.state}</Text>
+                                        <Text style={styles.basicInfoContent}></Text>
                                         <Text style={styles.basicInfoContent}>Remaining use: {container.remain}</Text>
-                                        <Text style={styles.basicInfoContent}>Limit: {container.capacity}</Text>
+                                        <Text style={styles.basicInfoContent}>Avl. Rebate: {container.rebate}</Text>
                                     </View>                               
                                 </View>
                             </Card>       
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     },
 
     basicInfoContent: {
-        width: "50%",
+        width: "40%",
     },
 });
 
