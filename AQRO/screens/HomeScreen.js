@@ -19,9 +19,9 @@ function HomeScreen({navigation}) {
     ];
 
     const aqroPartners = [
-        {name: "itos", image: require("/Users/russelguerrero/AQRO2/AQRO/assets/itos.jpg")},
-        {name: "jeds", image: require("/Users/russelguerrero/AQRO2/AQRO/assets/jeds.jpg")},
-        {name: "piolos", image: require("/Users/russelguerrero/AQRO2/AQRO/assets/piolos.jpg")}
+        {name: "itos", image: require("../assets/itos.jpg")},
+        {name: "jeds", image: require("../assets/jeds.jpg")},
+        {name: "piolos", image: require("../assets/piolos.jpg")}
     ]
 
 

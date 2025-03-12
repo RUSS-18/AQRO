@@ -47,10 +47,10 @@ function BottomTabs() {
               tabBarInactiveTintColor: lightTheme.secondary,
               tabBarStyle: { backgroundColor: lightTheme.cardBackground2, height: 60},
               tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold'},
-              headerBackground: () => (<ImageBackground source={require('/Users/russelguerrero/AQRO2/AQRO/assets/summer-night-forest-vector-background-260nw-1539958856.jpg.webp')} style={{width: '100%', height: '100%', resizeMode:'contain'}}/>),
+              headerBackground: () => (<ImageBackground source={require('./AQRO/assets/summer-night-forest-vector-background-260nw-1539958856.jpg.webp')} style={{width: '100%', height: '100%', resizeMode:'contain'}}/>),
               headerTitle: () => (
                 <View style={styles.headerContainer}>                
-                  <Image source={require("/Users/russelguerrero/AQRO2/AQRO/assets/4.png")} style={styles.heroImage} />
+                  <Image source={require("./AQRO/assets/4.png")} style={styles.heroImage} />
                   <TouchableOpacity>
                     <Ionicons name='scan' style={styles.scan} size={32}/>
                   </TouchableOpacity>

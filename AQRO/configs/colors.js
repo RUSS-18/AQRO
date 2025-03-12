@@ -12,7 +12,7 @@ export const lightTheme = {
     secondary: '#ffffff',  // White
     borderColor: '#333F44',
     cardBackground: '#111E20',
-    cardBackground2: '#6B7280',
+    cardBackground2: '#22333A',
     border: 'rgba(3, 15, 15, 0.1)',
   };
   
