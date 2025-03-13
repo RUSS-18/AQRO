@@ -7,7 +7,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Card } from 'react-native-paper';
 import colors, { lightTheme } from '../configs/colors';
 
-function HomeScreen({navigation}) {
+function HomeScreen() {
 
     const cardsInfo = [
         {name: "Active", bgColor: "#70C146", value: 5, icon: "briefcase"},
@@ -29,7 +29,7 @@ function HomeScreen({navigation}) {
         <SafeAreaProvider style={styles.container1}>
             <SafeAreaView style={styles.container}>
                 <ScrollView contentContainerStyle={styles.scrollContainer}>
-                    {/* <Text style={styles.subTitles}>Containers</Text> */}
+                    <Text style={styles.subTitles}>Containers</Text>
                     <View style={styles.infoCage}>
                         {cardsInfo.map((card, index) => 
                             <Card key={index} style={styles.infoContainers}> 
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     },
 
     container: {
-        height:screenHeight, 
+        height: screenHeight, 
         alignItems:'center',
         backgroundColor: lightTheme.background,
         borderRadius: 10, 
@@ -90,7 +90,6 @@ const styles = StyleSheet.create({
 
     scrollContainer: {
         paddingBottom: '60%',
-        marginTop: 20
     }, 
 
     infoCage: {

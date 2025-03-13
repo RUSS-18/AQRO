@@ -45,7 +45,7 @@ function BottomTabs() {
               },
               tabBarActiveTintColor: lightTheme.primary,
               tabBarInactiveTintColor: lightTheme.secondary,
-              tabBarStyle: { backgroundColor: lightTheme.cardBackground2, height: 60},
+              tabBarStyle: styles.tabBar,
               tabBarLabelStyle: { fontSize: 12, fontWeight: 'bold'},
               headerBackground: () => (<ImageBackground source={require('./AQRO/assets/summer-night-forest-vector-background-260nw-1539958856.jpg.webp')} style={{width: '100%', height: '100%', resizeMode:'contain'}}/>),
               headerTitle: () => (
@@ -84,6 +84,13 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection:'row',
     alignItems:'center',
+  },
+
+  tabBar: {
+    backgroundColor: lightTheme.cardBackground2, 
+    height: 60, 
+    borderTopRightRadius: 10, 
+    borderTopLeftRadius: 10
   }
 
 })
